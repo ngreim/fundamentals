@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130710202404) do
+ActiveRecord::Schema.define(version: 20140218045056) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,50 @@ ActiveRecord::Schema.define(version: 20130710202404) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "away_teams", force: true do |t|
+    t.integer "game_id"
+    t.integer "team_id"
+  end
+
+  create_table "follow_organizations", force: true do |t|
+    t.integer "user_id"
+    t.integer "organization_id"
+  end
+
+  create_table "follow_teams", force: true do |t|
+    t.integer "user_id"
+    t.integer "team_id"
+  end
+
+  create_table "game_admins", force: true do |t|
+    t.integer "game_id"
+    t.integer "user_id"
+  end
+
+  create_table "games", force: true do |t|
+    t.integer "home_score"
+    t.integer "away_score"
+  end
+
+  create_table "home_teams", force: true do |t|
+    t.integer "game_id"
+    t.integer "team_id"
+  end
+
+  create_table "organization_admins", force: true do |t|
+    t.integer "organization_id"
+    t.integer "user_id"
+  end
+
+  create_table "organizations", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "teams", force: true do |t|
+    t.integer "organization_id"
+    t.string  "sport"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false

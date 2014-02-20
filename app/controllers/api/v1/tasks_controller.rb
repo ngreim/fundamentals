@@ -3,20 +3,21 @@ class Api::V1::TasksController < ApplicationController
                      :if => Proc.new { |c| c.request.format == 'application/json' }
 
   # Just skip the authentication for now
-  # before_filter :authenticate_user!
+   before_filter :authenticate_user!
 
   respond_to :json
 
   def index
+  current_user.update_column(:name, "brandon")
     render :text => '{
-  "success":true,
-  "info":"ok",
-  "data":{
-          "tasks":[
-                    {"title":"Complete the app"},
-                    {"title":"Complete the tutorial"}
-                  ]
-         }
-}'
+ 	 "success":true,
+ 	 "info":"ok",
+ 	 "data":{
+        	  "tasks":[
+                	    {"title":"Complete the app"},
+                   	 {"title":"Complete the tutorial"}
+                 	 ]
+        	 }
+	}'
   end
 end
