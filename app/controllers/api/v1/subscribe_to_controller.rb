@@ -13,7 +13,7 @@ class Api::V1::SubscribeToController < ApplicationController
     new_subscription = SubscribedTo.create!(:user_id => params[:user_id], :provider_id => params[:provider_id])
     render :status => 200,
            :json => { :success => true,
-                      :info => "Provider Created",
+                      :info => "Subscription Created",
                       :data => { :id => new_subscription.id  }
                     }
   end
