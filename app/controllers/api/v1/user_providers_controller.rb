@@ -11,14 +11,10 @@ class Api::V1::UserProvidersController < ApplicationController
         subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
         my_providers = Provider.where(:id => subscriptions) 
 
-	render :status => 200,
-           :json => { :success => true,
-                      :info => "My Subscriptions",
-                      :data => {
-
-                                   "providers" => my_providers
-                                   
-                               }
-                    }
-  end
+        render :status => 200,
+                 :json => { :success => true,
+                            :info => "My Subscriptions",
+                            :data => {"providers" => my_providers}
+                          }
+        end
 end
