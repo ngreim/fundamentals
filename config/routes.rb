@@ -10,7 +10,7 @@ DeviseExample::Application.routes.draw do
       end
       get 'user_providers' => 'user_providers#index'
       post 'user_providers' => 'user_providers#create'
-      
+      post 'create_providers' => 'create_providers#create'
     end
   end
 
