@@ -21,10 +21,4 @@ class Api::V1::UserProvidersController < ApplicationController
                                }
                     }
   end
-  
-  
-  
-  
-
-
 end

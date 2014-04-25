@@ -7,16 +7,16 @@ class Api::V1::CreateProvidersController < ApplicationController
 
   respond_to :json
   
-  def create
+  #def create
 
-   new_provider = Provider.create!(name: => params[:name] )
-    render :status => 200,
-           :json => { :success => true,
-                      :info => "Provider Created",
-             :data => { :name => new_provider  }
-                    }
+  # new_provider = Provider.create!(name: => params[:name] )
+  #  render :status => 200,
+  #         :json => { :success => true,
+  #                    :info => "Provider Created",
+  #                    :data => { :name => new_provider  }
+  #                  }#
     
-  end
+  #end
   
 end
 
