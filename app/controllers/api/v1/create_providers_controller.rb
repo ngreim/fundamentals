@@ -7,7 +7,7 @@ class Api::V1::CreateProvidersController < ApplicationController
 
   respond_to :json
   
-  #def create
+  def create
 
   # new_provider = Provider.create!(name: => params[:name] )
   #  render :status => 200,
@@ -16,7 +16,7 @@ class Api::V1::CreateProvidersController < ApplicationController
   #                    :data => { :name => new_provider  }
   #                  }#
     
-  #end
+  end
   
 end
 
