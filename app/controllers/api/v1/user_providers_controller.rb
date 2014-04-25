@@ -28,7 +28,7 @@ class Api::V1::UserProvidersController < ApplicationController
     render :status => 200,
            :json => { :success => true,
                       :info => "Provider Created",
-                      :data => { :id => new_provider.id  }
+             :data => { :name => provider_name  }
                     }
   end
 
