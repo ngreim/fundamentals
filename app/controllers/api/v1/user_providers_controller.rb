@@ -23,19 +23,16 @@ class Api::V1::UserProvidersController < ApplicationController
   end
   
   def create
-    build_resource(provider_params)
-    resource.skip_confirmation!
-    #new_provider = Provider.create!(:name => name )
+
+    new_provider = Provider.create!(:name)
     render :status => 200,
            :json => { :success => true,
                       :info => "Provider Created",
-             :data => { :name => resource  }
+             :data => { :name => new_provider  }
                     }
   end
   
-  def provider_params
-    params.require(:name)
-  end
+  
 
 
 end
