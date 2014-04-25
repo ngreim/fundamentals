@@ -15,5 +15,6 @@ class Api::V1::CreateProvidersController < ApplicationController
                       :info => "Provider Created",
              :data => { :name => new_provider  }
                     }
+    
   end
 
