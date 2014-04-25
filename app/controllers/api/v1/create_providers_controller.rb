@@ -7,6 +7,7 @@ class Api::V1::CreateProvidersController < ApplicationController
 
   respond_to :json
   
+ 
   def create
 
     new_provider = Provider.create!(:name => params[:name])
