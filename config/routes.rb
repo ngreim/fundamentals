@@ -6,6 +6,7 @@ DeviseExample::Application.routes.draw do
         post 'registrations' => 'registrations#create', :as => 'register'
         post 'sessions' => 'sessions#create', :as => 'login'
         delete 'sessions' => 'sessions#destroy', :as => 'logout'
+        post 'providers' => 'providers#create', :as => 'providers' 
       end
       get 'user_providers' => 'user_providers#index'
       post 'user_providers' => 'user_providers#create'
