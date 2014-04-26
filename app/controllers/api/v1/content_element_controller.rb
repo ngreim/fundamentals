@@ -8,13 +8,15 @@ class Api::V1::ContentElementController < ApplicationController
   respond_to :json
   
   def index
-    
-    content_elements = ContentElement.all
+    #subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
+        #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
+    provider_content_elements = ContentElements.where(:id => params[:provider_id])
+    #content_elements = ContentElement.all
     
         render :status => 200,
                  :json => { :success => true,
                    :info => "Content Elements",
-                   :data => {"content_elements" => content_elements}
+                   :data => {"content_elements" => provider_content_elements}
                           }
     end
   
