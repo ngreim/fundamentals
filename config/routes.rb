@@ -14,6 +14,8 @@ DeviseExample::Application.routes.draw do
       post 'subscribe_to' => 'subscribe_to#create'
       post 'content_area' => 'content_area#create'
       get 'content_area' => 'content_area#index'
+      post 'delivery_mode' => 'delivery_mode#create'
+      get 'delivery_mode' => 'delivery_mode#index'
     end
   end
 
