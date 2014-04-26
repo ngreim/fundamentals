@@ -18,7 +18,7 @@ DeviseExample::Application.routes.draw do
       get 'delivery_mode' => 'delivery_mode#index'
       post 'content_element' => 'content_element#create'
       post 'get_provider_content_elements' => 'get_provider_content_elements#create'
-      post 'create_formats' => 'create_formats#create'
+      post 'format' => 'format#create'
     end
   end
 
