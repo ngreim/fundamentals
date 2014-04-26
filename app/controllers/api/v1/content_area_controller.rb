@@ -16,7 +16,7 @@ class Api::V1::ContentAreaController < ApplicationController
                    :info => "Content Areas",
                    :data => {"content_areas" => content_areas}
                           }
-  end
+    herend
   
  
   def create
