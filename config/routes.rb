@@ -16,6 +16,8 @@ DeviseExample::Application.routes.draw do
       get 'content_area' => 'content_area#index'
       post 'delivery_mode' => 'delivery_mode#create'
       get 'delivery_mode' => 'delivery_mode#index'
+      post 'content_element' => 'content_element#create'
+      get 'content_element' => 'content_element#index'
     end
   end
 
