@@ -25,8 +25,8 @@ class Api::V1::ContentElementController < ApplicationController
     render :status => 200,
            :json => { :success => true,
              :info => "Content Created",
-             :data => { :name => new_content_element.name
-                       :provider_id => new_content_element.provider_id
+             :data => { :name => new_content_element.name,
+                       :provider_id => new_content_element.provider_id,
                        :url_link => new_content_element.url_link}
                     }
   end
