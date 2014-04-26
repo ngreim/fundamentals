@@ -10,7 +10,7 @@ class Api::V1::ContentElementController < ApplicationController
   def index
     #subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
         #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
-    provider_content_elements = ContentElements.where(:id => params[:provider_id])
+    provider_content_elements = ContentElements.where(:provider_id => 1)
     #content_elements = ContentElement.all
     
         render :status => 200,
