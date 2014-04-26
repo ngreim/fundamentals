@@ -10,13 +10,14 @@ class Api::V1::ContentElementController < ApplicationController
  
   def create
 
-    new_content_element = ContentElement.create!(:provider_id => params[:provider_id], :name => params[:name], :url_link => params[:url_link])
+    new_content_element = ContentElement.create!(:provider_id => params[:provider_id], :name => params[:name], :url_link => params[:url_link], :format => params[:format])
     render :status => 200,
            :json => { :success => true,
              :info => "Content Created",
              :data => { :name => new_content_element.name,
                        :provider_id => new_content_element.provider_id,
-                       :url_link => new_content_element.url_link}
+                       :url_link => new_content_element.url_link,
+                       :format => new_content_element.format}
                     }
   end
   
