@@ -17,7 +17,7 @@ DeviseExample::Application.routes.draw do
       post 'delivery_mode' => 'delivery_mode#create'
       get 'delivery_mode' => 'delivery_mode#index'
       post 'content_element' => 'content_element#create'
-      get 'content_element' => 'content_element#index'
+      post 'get_provider_content_elements' => 'get_provider_content_elements#create'
     end
   end
 
