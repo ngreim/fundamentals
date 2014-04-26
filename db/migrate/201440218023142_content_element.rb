@@ -3,7 +3,6 @@ class ContentElement < ActiveRecord::Migration
     create_table :content_elements do |t|
 	    t.string :name
       t.string :url_link
-      t.references :provider
     end
   end
 end
