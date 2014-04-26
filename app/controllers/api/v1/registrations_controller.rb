@@ -13,7 +13,8 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
            :json => { :success => true,
                       :info => "Registered",
                       :data => { :user => resource,
-                                 :auth_token => current_user.authentication_token 
+                                 :auth_token => current_user.authentication_token
+                                 :type_id => current_user.type_id
                                } 
                     }
     else
@@ -26,7 +27,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :type_id)
   end
 
 end
