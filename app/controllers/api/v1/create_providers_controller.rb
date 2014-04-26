@@ -7,6 +7,19 @@ class Api::V1::CreateProvidersController < ApplicationController
 
   respond_to :json
   
+  def index
+        #subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
+        #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
+        #my_providers = Provider.where(:id => subscriptions) 
+        my_providers = Provider.all
+    
+        render :status => 200,
+                 :json => { :success => true,
+                            :info => "My Subscriptions",
+                            :data => {"providers" => my_providers}
+                          }
+        end
+  
  
   def create
 
