@@ -1,7 +1,7 @@
 class CreateContentArea < ActiveRecord::Migration
-  def self.up
-    create_table(:users) do |t|
-      t.string :name
+  def change
+    create_table :content_areas do |t|
+	    t.string :name
     end
   end
 end
