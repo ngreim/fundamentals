@@ -8,19 +8,19 @@ DeviseExample::Application.routes.draw do
         delete 'sessions' => 'sessions#destroy', :as => 'logout'
          
       end
-      get 'user_providers' => 'user_providers#index'
-      post 'user_providers' => 'user_providers#create'
-      get 'create_providers' => 'create_providers#index'
-      post 'create_providers' => 'create_providers#create'
-      post 'subscribe_to' => 'subscribe_to#create'
-      post 'content_area' => 'content_area#create'
-      get 'content_area' => 'content_area#index'
-      post 'delivery_mode' => 'delivery_mode#create'
-      get 'delivery_mode' => 'delivery_mode#index'
-      post 'content_element' => 'content_element#create'
-      post 'get_provider_content_elements' => 'get_provider_content_elements#create'
-      post 'format' => 'format#create'
-      get 'format' => 'format#index'
+      get 'user_providers' => 'user_providers#index'#returns all user providers
+      post 'user_providers' => 'user_providers#create'#not used
+      get 'create_providers' => 'create_providers#index'#returns all providers
+      post 'create_providers' => 'create_providers#create'#create a provider
+      post 'subscribe_to' => 'subscribe_to#create'#subscribe to a provider
+      post 'content_area' => 'content_area#create'#create a content/knowledge area
+      get 'content_area' => 'content_area#index'#return all content/knowledge areas
+      post 'delivery_mode' => 'delivery_mode#create'#create a delivery mode
+      get 'delivery_mode' => 'delivery_mode#index'#return all delivery moodes
+      post 'content_element' => 'content_element#create'#Create a content element
+      post 'get_provider_content_elements' => 'get_provider_content_elements#create'#returns specfic providers content elements
+      post 'format' => 'format#create'#create a format
+      get 'format' => 'format#index'#return all the formats
     end
   end
 
