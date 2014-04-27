@@ -27,8 +27,7 @@ class Api::V1::CreateProvidersController < ApplicationController
     render :status => 200,
            :json => { :success => true,
                       :info => "Provider Created",
-                      :data => { #:id => new_provider.id,
-                                 :name => new_provider.name,
+                      :data => { :name => new_provider.name,
                                  :content_area_id => new_provider.content_area_id,
                                  :delivery_mode_id = > new_provider.delivery_mode_id
                                }
