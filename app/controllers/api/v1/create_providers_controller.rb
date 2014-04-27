@@ -23,12 +23,14 @@ class Api::V1::CreateProvidersController < ApplicationController
  
   def create
 
-    new_provider = Provider.create!(:name => params[:name],:content_area_id => params[:content_area_id])
+    new_provider = Provider.create!(:name => params[:name],:content_area_id => params[:content_area_id],:delivery_mode_id => params[:delivery_mode_id])
     render :status => 200,
            :json => { :success => true,
                       :info => "Provider Created",
-                      :data => { :name => new_provider.name,
-                                 :content_area_id => new_provider.content_area_id
+                      :data => { :id => new_provider.id,
+                                 :name => new_provider.name,
+                                 :content_area_id => new_provider.content_area_id,
+                                 :delivery_mode_id = > new_provider.delivery_mode_id
                                }
                     }
   end

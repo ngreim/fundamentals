@@ -29,4 +29,12 @@ class Api::V1::DeliveryModeController < ApplicationController
                     }
   end
   
+  def destroy
+    
+    delivery = DeliveryMode.find(params[:id])
+    providers_delivery = Provider.find_by_delivery_mode_id
+    delivery.destroy
+    
+  end
+  
 end
