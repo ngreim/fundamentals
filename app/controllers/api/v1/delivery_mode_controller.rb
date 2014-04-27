@@ -35,7 +35,7 @@ class Api::V1::DeliveryModeController < ApplicationController
     providers_delivery = Provider.find_by_delivery_mode_id(delivery.id)
     #delivery.destroy
     
-    if providers_delivery == null
+    if providers_delivery.nil?
       render :status => 200,
            :json => { :success => true,
              :info => "Content Created",
