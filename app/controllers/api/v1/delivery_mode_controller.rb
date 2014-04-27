@@ -29,12 +29,17 @@ class Api::V1::DeliveryModeController < ApplicationController
                     }
   end
   
-  #def destroy
+  def destroy
     
-   # delivery = DeliveryMode.find(params[:id])
-    #providers_delivery = Provider.find_by_delivery_mode_id
+    delivery = DeliveryMode.find(params[:id])
+    providers_delivery = Provider.find_by_delivery_mode_id
     #delivery.destroy
+    render :status => 200,
+           :json => { :success => true,
+             :info => "Content Created",
+             :data => { "delivery" }
+                    }
     
-  #end
+  end
   
 end
