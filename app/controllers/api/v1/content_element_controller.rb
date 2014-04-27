@@ -30,8 +30,7 @@ class Api::V1::ContentElementController < ApplicationController
       render :status => 200,
            :json => { :success => true,
              :info => "Delivery Mode Deleted",
-             :data => { "names" => content,
-                        "providers" => providers_content}
+             :data => { "names" => content}
                     }
 
   end
