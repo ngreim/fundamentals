@@ -29,7 +29,7 @@ class Api::V1::CreateProvidersController < ApplicationController
                       :info => "Provider Created",
                       :data => { :name => new_provider.name,
                                  :content_area_id => new_provider.content_area_id,
-                                 :delivery_mode_id = > new_provider.delivery_mode_id
+                                 :delivery_mode_id => new_provider.delivery_mode_id
                                }
                     }
   end
