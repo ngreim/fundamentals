@@ -34,12 +34,22 @@ class Api::V1::DeliveryModeController < ApplicationController
     delivery = DeliveryMode.find(params[:id])
     providers_delivery = Provider.find_by_delivery_mode_id(delivery.id)
     #delivery.destroy
-    render :status => 200,
+    
+    if providers_delivery == null
+      render :status => 200,
            :json => { :success => true,
              :info => "Content Created",
              :data => { "names" => delivery,
                         "providers" => providers_delivery}
                     }
+    else 
+      render :status => 401,
+           :json => { :success => false,
+             :info => "Delete Failed Provider Still Has Delivery Mode",
+                      :data => {} }
+    end
+  
+    
     
   end
   
