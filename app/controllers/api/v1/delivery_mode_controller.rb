@@ -17,8 +17,7 @@ class Api::V1::DeliveryModeController < ApplicationController
                    :data => {"delivery_modes" => delivery_modes}
                           }
     end
-  
- 
+
   def create
 
     new_delivery_mode = DeliveryMode.create!(:name => params[:name])
@@ -50,9 +49,6 @@ class Api::V1::DeliveryModeController < ApplicationController
                       :data => {"names" => delivery,
                                 "providers" => providers_delivery} }
     end
-  
-    
-    
   end
   
 end

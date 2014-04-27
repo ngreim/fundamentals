@@ -18,6 +18,7 @@ DeviseExample::Application.routes.draw do
       
       post 'content_area' => 'content_area#create'#create a content/knowledge area
       get 'content_area' => 'content_area#index'#return all content/knowledge areas
+      put 'content_area' => 'content_area#destroy'#delete content area if no providers linked
       
       post 'delivery_mode' => 'delivery_mode#create'#create a delivery mode
       get 'delivery_mode' => 'delivery_mode#index'#return all delivery moodes
