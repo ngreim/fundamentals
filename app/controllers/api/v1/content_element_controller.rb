@@ -21,4 +21,19 @@ class Api::V1::ContentElementController < ApplicationController
                     }
   end
   
+  def destroy
+    
+    content = ContentElement.find(params[:id])
+    #providers_content = Provider.find_by_content_area_id(content.id)
+
+      content.destroy
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Delivery Mode Deleted",
+             :data => { "names" => content,
+                        "providers" => providers_content}
+                    }
+
+  end
+  
 end
