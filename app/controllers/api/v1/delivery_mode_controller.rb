@@ -24,7 +24,7 @@ class Api::V1::DeliveryModeController < ApplicationController
     new_delivery_mode = DeliveryMode.create!(:name => params[:name])
     render :status => 200,
            :json => { :success => true,
-             :info => "Content Created",
+             :info => "Delivery Mode Created",
              :data => { :name => new_delivery_mode  }
                     }
   end
@@ -36,17 +36,19 @@ class Api::V1::DeliveryModeController < ApplicationController
     #delivery.destroy
     
     if providers_delivery.nil?
+      delivery.destroy
       render :status => 200,
            :json => { :success => true,
-             :info => "Content Created",
+             :info => "Delivery Mode Deleted",
              :data => { "names" => delivery,
                         "providers" => providers_delivery}
                     }
     else 
-      render :status => 401,
+      render :status => 403,
            :json => { :success => false,
              :info => "Delete Failed Provider Still Has Delivery Mode",
-                      :data => {} }
+                      :data => {"names" => delivery,
+                                "providers" => providers_delivery} }
     end
   
     
