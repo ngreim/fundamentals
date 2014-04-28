@@ -22,13 +22,13 @@ class Api::V1::SubscribeToController < ApplicationController
       time_per_division = 31536000
     end
     seconds = seconds*time_per_division
-    #end_date = time + seconds
-    end_date = time - 10
-    if time < end_date
-      test = "passed"
-    else
-      test = "failed"
-    end
+    end_date = time + seconds
+    #end_date = time - 10
+    #if time < end_date
+    #  test = "passed"
+    #else
+    #  test = "failed"
+    #end
     #end_date = time +
     #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type])
     
