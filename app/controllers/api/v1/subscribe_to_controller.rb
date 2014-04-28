@@ -13,6 +13,14 @@ class Api::V1::SubscribeToController < ApplicationController
     time = Time.new
     length = "6 months"
     temp = length.split(" ")
+    if temp[1].eql? "months"
+      seconds = temp[0].to_i * 2592000
+      end_date = time + seconds
+    else if temp[1].eql? "days"
+      
+    else
+      
+    end
     
     #end_date = time +
     #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date => end_date)
@@ -22,8 +30,7 @@ class Api::V1::SubscribeToController < ApplicationController
     render :status => 200,
            :json => { :success => true,
                       :info => "Subscription Created",
-                      :data => { :id => temp[0],
-                        "second string" => temp[1]}#new_subscription.id  }
+             :data => { :id => end_date}#new_subscription.id  }
                     }
   end
   
