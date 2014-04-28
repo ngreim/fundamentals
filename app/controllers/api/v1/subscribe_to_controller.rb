@@ -22,7 +22,8 @@ class Api::V1::SubscribeToController < ApplicationController
     render :status => 200,
            :json => { :success => true,
                       :info => "Subscription Created",
-                      :data => { :id => temp}#new_subscription.id  }
+                      :data => { :id => temp[0],
+                        "second string" => temp[1]}#new_subscription.id  }
                     }
   end
   
