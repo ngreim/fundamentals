@@ -29,6 +29,8 @@ DeviseExample::Application.routes.draw do
       
       post 'get_provider_content_elements' => 'get_provider_content_elements#create'#returns specfic providers content elements
       
+      post 'get_provider_subscription_types' => 'get_provider_subscription_types#create'#returns specfic providers subscriptions types
+      
       post 'format' => 'format#create'#create a format
       get 'format' => 'format#index'#return all the formats
       put 'format' => 'format#destroy'#Delete a Format
