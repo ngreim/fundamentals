@@ -29,7 +29,7 @@ class Api::V1::ContentElementController < ApplicationController
       content.destroy
       render :status => 200,
            :json => { :success => true,
-             :info => "Delivery Mode Deleted",
+             :info => "Content Element Deleted",
              :data => { "names" => content}
                     }
 

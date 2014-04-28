@@ -15,8 +15,8 @@ class Api::V1::FormatController < ApplicationController
     
         render :status => 200,
                  :json => { :success => true,
-                            :info => "My Subscriptions",
-                            :data => {"providers" => my_formats}
+                            :info => "My Formats",
+                            :data => {"Formats" => my_formats}
                           }
   end
 
@@ -28,6 +28,29 @@ class Api::V1::FormatController < ApplicationController
              :info => "Format Created",
              :data => { :name => new_format}
                     }
+  end
+  
+  def destroy
+    
+    content = Format.find(params[:id])
+    content_element = ContentElement.find_by_format_id(content.id)
+    
+    
+    if content_element.nil?
+      #content.destroy
+      render :status => 200,
+             :json => { :success => true,
+                        :info => "Content Element Deleted",
+                        :data => { "formats" => content,
+                                   "content elements" => content_element}
+                    }
+    else 
+      render :status => 403,
+             :json => { :success => false,
+                        :info => "Delete Failed Content Element Still Has Format",
+                        :data => {"formats" => content,
+                                  "content elements" => providers_content} }
+    end
   end
   
 end

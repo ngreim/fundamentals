@@ -31,6 +31,7 @@ DeviseExample::Application.routes.draw do
       
       post 'format' => 'format#create'#create a format
       get 'format' => 'format#index'#return all the formats
+      put 'format' => 'format#destroy'#Delete a Format
       
       post 'subscription_type' => 'subscription_type#create'#create a subscription type
     end
