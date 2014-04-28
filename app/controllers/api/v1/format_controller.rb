@@ -22,11 +22,11 @@ class Api::V1::FormatController < ApplicationController
 
   def create
 
-    new_format = Format.create!(:name => params[:name])
+    new_format = Format.create!(:name => params[:name], :hidden => 0)
     render :status => 200,
            :json => { :success => true,
              :info => "Format Created",
-             :data => { :name => new_format}
+             :data => { "format" => new_format}
                     }
   end
   

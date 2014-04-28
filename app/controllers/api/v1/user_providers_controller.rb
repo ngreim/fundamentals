@@ -19,4 +19,25 @@ class Api::V1::UserProvidersController < ApplicationController
                             :data => {"providers" => my_providers}
                           }
         end
+  
+  def destroy
+    
+    provider = Provider.find(params[:id])
+    content_elements = ContentElement.where(:provider_id => provider.id)
+    #delivery.destroy
+    
+    if content_elements.nil?
+      provider.destroy
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Delivery Mode Deleted",
+             :data => { "names" => provider}
+                    }
+    else 
+      render :status => 403,
+           :json => { :success => false,
+             :info => "Delete Failed Provider Doesnt Exist",
+             :data => {"names" => provider} }
+    end
+  end
 end

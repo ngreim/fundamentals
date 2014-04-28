@@ -10,13 +10,11 @@ class Api::V1::SubscriptionTypeController < ApplicationController
 
   def create
 
-    new_subscription_type = SubscriptionType.create!(:provider_id => params[:provider_id], :name => params[:name], :subscription_length => params[:subscription_length])
+    new_subscription_type = SubscriptionType.create!(:provider_id => params[:provider_id], :name => params[:name], :subscription_length => params[:subscription_length], :hidden => 0)
     render :status => 200,
            :json => { :success => true,
              :info => "Subscription Type Created",
-             :data => { :name => new_subscription_type.name,
-                        :provider_id => new_subscription_type.provider_id,
-                        :subscription_length => new_subscription_type.subscription_length}
+             :data => { "subscription type" => new_subscription_type}
                     }
   end
   

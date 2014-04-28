@@ -10,6 +10,7 @@ DeviseExample::Application.routes.draw do
       end
       get 'user_providers' => 'user_providers#index'#returns all user providers
       post 'user_providers' => 'user_providers#create'#not used
+      put 'user_providers' => 'user_providers#destroy'#delete a provider
       
       get 'create_providers' => 'create_providers#index'#returns all providers
       post 'create_providers' => 'create_providers#create'#create a provider

@@ -21,11 +21,11 @@ class Api::V1::ContentAreaController < ApplicationController
  
   def create
 
-    new_content_area = ContentArea.create!(:name => params[:name])
+    new_content_area = ContentArea.create!(:name => params[:name], :hidden => 0)
     render :status => 200,
            :json => { :success => true,
              :info => "Content Area Created",
-             :data => { :name => new_content_area  }
+             :data => { "content area" => new_content_area  }
                     }
   end
   

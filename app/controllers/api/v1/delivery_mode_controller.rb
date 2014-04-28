@@ -20,11 +20,11 @@ class Api::V1::DeliveryModeController < ApplicationController
 
   def create
 
-    new_delivery_mode = DeliveryMode.create!(:name => params[:name])
+    new_delivery_mode = DeliveryMode.create!(:name => params[:name], :hidden => 0)
     render :status => 200,
            :json => { :success => true,
              :info => "Delivery Mode Created",
-             :data => { :name => new_delivery_mode  }
+             :data => { "delivery mode" => new_delivery_mode  }
                     }
   end
   
