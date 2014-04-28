@@ -11,7 +11,7 @@ class Api::V1::SubscribeToController < ApplicationController
   def create
 
     time = Time.new
-    length = "1 year"
+    length = "1 months"
     temp = length.split(" ")
     seconds = temp[0].to_i
     if temp[1].eql? "months" #|| temp[1].eql? "month"
