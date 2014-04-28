@@ -37,7 +37,7 @@ class Api::V1::UserProvidersController < ApplicationController
       render :status => 403,
            :json => { :success => false,
              :info => "Delete Failed Provider Doesnt Exist",
-             :data => {"names" => provider} }
+             :data => {"names" => content_elements} }
     end
   end
 end
