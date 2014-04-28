@@ -49,7 +49,7 @@ class Api::V1::FormatController < ApplicationController
              :json => { :success => false,
                         :info => "Delete Failed Content Element Still Has Format",
                         :data => {"formats" => content,
-                                  "content elements" => providers_content} }
+                                  "content elements" => content_element} }
     end
   end
   
