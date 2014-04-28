@@ -10,11 +10,19 @@ class Api::V1::SubscribeToController < ApplicationController
  
   def create
 
-    new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id])
+    time = Time.new
+    length = params[:subscription_length]
+    temp = length.split(" ")
+    
+    #end_date = time +
+    #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date => end_date)
+    
+    
+    
     render :status => 200,
            :json => { :success => true,
                       :info => "Subscription Created",
-                      :data => { :id => new_subscription.id  }
+                      :data => { :id => temp}#new_subscription.id  }
                     }
   end
   
