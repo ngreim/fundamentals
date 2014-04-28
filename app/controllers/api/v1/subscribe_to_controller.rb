@@ -14,9 +14,9 @@ class Api::V1::SubscribeToController < ApplicationController
     length = "1 year"
     temp = length.split(" ")
     seconds = temp[0].to_i
-    if temp[1].eql? "months" || temp[1].eql? "month"
+    if temp[1].eql? "months" #|| temp[1].eql? "month"
       time_per_division = 2635200
-    else if temp[1].eql? "days" || temp[1].eql? "day"
+    else if temp[1].eql? "days" #|| temp[1].eql? "day"
       time_per_division = 86400
     else
       time_per_division = 31536000
