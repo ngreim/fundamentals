@@ -11,16 +11,20 @@ class Api::V1::SubscribeToController < ApplicationController
   def create
 
     time = Time.new
-    length = "6 months"
+    length = "1 year"
     temp = length.split(" ")
-    if temp[1].eql? "months"
-      seconds = temp[0].to_i# * 2592000
-      seconds = seconds*2635200
-      end_date = time + seconds  
+    seconds = temp[0].to_i
+    if temp[1].eql? "months" || temp[1].eql? "month"
+      time_per_division = 2635200
+    else if temp[1].eql? "days" || temp[1].eql? "day"
+      time_per_division = 86400
+    else
+      time_per_division = 31536000
     end
-    
+    seconds = seconds*time_per_division
+    end_date = time + seconds
     #end_date = time +
-    #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date => end_date)
+    #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type])
     
     
     
