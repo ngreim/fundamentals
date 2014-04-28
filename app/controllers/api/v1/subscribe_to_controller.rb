@@ -16,7 +16,7 @@ class Api::V1::SubscribeToController < ApplicationController
     if temp[1].eql? "months"
       seconds = temp[0].to_i# * 2592000
       seconds = seconds*2592000
-      #end_date = time + seconds  
+      end_date = time + seconds  
     end
     
     #end_date = time +
@@ -27,7 +27,7 @@ class Api::V1::SubscribeToController < ApplicationController
     render :status => 200,
            :json => { :success => true,
                       :info => "Subscription Created",
-             :data => { :id => seconds}#new_subscription.id  }
+             :data => { :id => end_date}#new_subscription.id  }
                     }
   end
   
