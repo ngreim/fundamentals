@@ -11,7 +11,7 @@ class Api::V1::SubscribeToController < ApplicationController
   def create
 
     time = Time.new
-    length = params[:subscription_length]
+    length = "6 months"
     temp = length.split(" ")
     
     #end_date = time +
