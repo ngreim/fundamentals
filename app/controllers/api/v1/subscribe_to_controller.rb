@@ -14,11 +14,11 @@ class Api::V1::SubscribeToController < ApplicationController
     length = params[:subscription_type]
     temp = length.split(" ")
     seconds = temp[0].to_i
-    if temp[1].eql? "months" #|| temp[1].eql? "month"
+    if temp[1].eql? "months" || temp[1].eql? "month"
       time_per_division = 2635200
-    elsif temp[1].eql? "days" #|| temp[1].eql? "day"
+    elsif temp[1].eql? "days" || temp[1].eql? "day"
       time_per_division = 86400
-    else
+    elsif temp[1].eql? "years" || temp[1].eql? "year"
       time_per_division = 31536000
     end
     seconds = seconds*time_per_division
