@@ -22,8 +22,8 @@ class Api::V1::SubscribeToController < ApplicationController
       time_per_division = 31536000
     end
     seconds = seconds*time_per_division
-    end_date = time + seconds
-    
+    #end_date = time + seconds
+    end_date = time - 10
     if time < end_date
       test = "passed"
     else
