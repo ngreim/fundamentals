@@ -23,6 +23,12 @@ class Api::V1::SubscribeToController < ApplicationController
     end
     seconds = seconds*time_per_division
     end_date = time + seconds
+    
+    if time < end_date
+      test = "passed"
+    else
+      test = "failed"
+    end
     #end_date = time +
     #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type])
     
@@ -31,7 +37,8 @@ class Api::V1::SubscribeToController < ApplicationController
     render :status => 200,
            :json => { :success => true,
                       :info => "Subscription Created",
-             :data => { :id => end_date}#new_subscription.id  }
+             :data => { :id => end_date,
+               "test" => test}#new_subscription.id  }
                     }
   end
   
