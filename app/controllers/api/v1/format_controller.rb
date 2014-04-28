@@ -37,7 +37,7 @@ class Api::V1::FormatController < ApplicationController
     
     
     if content_element.nil?
-      #content.destroy
+      content.destroy
       render :status => 200,
              :json => { :success => true,
                         :info => "Content Element Deleted",
