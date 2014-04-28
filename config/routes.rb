@@ -26,6 +26,7 @@ DeviseExample::Application.routes.draw do
       put 'delivery_mode' => 'delivery_mode#destroy'#delete delivery mode if no providers linked
       
       post 'content_element' => 'content_element#create'#Create a content element
+      get 'content_element' => 'content_element#index'#return all content element
       put 'content_element' => 'content_element#destroy'#Delete a content element
       
       post 'get_provider_content_elements' => 'get_provider_content_elements#create'#returns specfic providers content elements

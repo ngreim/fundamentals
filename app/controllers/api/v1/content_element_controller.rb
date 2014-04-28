@@ -6,6 +6,16 @@ class Api::V1::ContentElementController < ApplicationController
    #before_filter :authenticate_user!
 
   respond_to :json
+  
+  def index
+    content_elements = ContentElement.all
+    
+        render :status => 200,
+                 :json => { :success => true,
+                   :info => "Content Elements",
+                            :data => {"content elements" => content_elements}
+                          }
+        end
 
  
   def create
