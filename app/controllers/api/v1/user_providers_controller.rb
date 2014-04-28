@@ -23,7 +23,7 @@ class Api::V1::UserProvidersController < ApplicationController
   def destroy
     
     provider = Provider.find(params[:id])
-    content_elements = ContentElement.where(:provider_id => provider.id)
+    content_elements = ContentElement.where(:provider_id => provider)
     #delivery.destroy
     
     if content_elements.nil?
