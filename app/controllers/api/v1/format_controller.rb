@@ -54,7 +54,7 @@ class Api::V1::FormatController < ApplicationController
   end
   
   def update
-    format = Format.find_format_by_id(params[:id])
+    format = Format.find_by_id(params[:id])
 
     #if format.hidden == 0
     #  format.update_column(:hidden, 1)
