@@ -21,10 +21,9 @@ class Api::V1::UserProvidersController < ApplicationController
             #i.destroy
           elsif time2 < time
             temp2 = temp2 +1
-            temp =  i
+            #temp =  i
             #i.destroy
-          else
-            temp = 1
+          
           end
           
         end
@@ -40,8 +39,8 @@ class Api::V1::UserProvidersController < ApplicationController
                             :info => "My Subscriptions",
                             :data => {"providers" => my_providers,
                               "subscriptions" => subscriptions,
-                              "temp" => temp,
                               "time" => time,
+                              "temp2" => temp2,
                               "all subscriptions" => all_subscriptions}
                           }
         end
