@@ -46,6 +46,8 @@ DeviseExample::Application.routes.draw do
       post 'subscription_type' => 'subscription_type#create'#create a subscription type
       delete 'subscription_type' => 'subscription_type#destroy'#Delete a subscription type
       put 'subscription_type' => 'subscription_type#update'#Update subscription type hidden value
+      
+      post 'search_providers' => 'search_providers#create'#search providers
     end
   end
 
