@@ -31,14 +31,23 @@ class Api::V1::ContentElementController < ApplicationController
   def destroy
     
     content = ContentElement.find(params[:id])
-    #providers_content = Provider.find_by_content_area_id(content.id)
+    #provider = content.provider_id
+    #users = SubscribedTo.where(:provider_id => provider)
 
+    #if users.nil?
       content.destroy
       render :status => 200,
            :json => { :success => true,
              :info => "Content Element Deleted",
              :data => { "names" => content}
                     }
+    #else
+      #render :status => 403,
+       #      :json => { :success => false,
+        #       :info => "Delete Failed User subscribed to Content Provider",
+         #               :data => {"names" => content,
+          #                "users" => users} }
+    #end
 
   end
   

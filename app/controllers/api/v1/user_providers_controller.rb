@@ -16,7 +16,7 @@ class Api::V1::UserProvidersController < ApplicationController
           if time2.nil?
             i.destroy
           elsif time2 < time
-            EndedSubscription.create!(:user_id => i.user_id, :provider_id => i.provider_id, :subscription_id => i.subscription_id, :subscription_type => i.subscription_type, :end_date_time => i.end_date_time, :end_date => i.end_date)
+            EndedSubscription.create!(:old_id => i.id, :user_id => i.user_id, :provider_id => i.provider_id, :subscription_id => i.subscription_id, :subscription_type => i.subscription_type, :end_date_time => i.end_date_time, :end_date => i.end_date)
             i.destroy
           end
           
@@ -44,13 +44,13 @@ class Api::V1::UserProvidersController < ApplicationController
       provider.destroy
       render :status => 200,
            :json => { :success => true,
-             :info => "Delivery Mode Deleted",
+             :info => "Provider Deleted",
              :data => { "names" => provider}
                     }
     else 
       render :status => 403,
            :json => { :success => false,
-             :info => "Delete Failed Provider Doesnt Exist",
+             :info => "Delete Failed",
              :data => {"names" => content_elements} }
     end
   end
