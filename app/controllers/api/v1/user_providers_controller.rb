@@ -10,6 +10,7 @@ class Api::V1::UserProvidersController < ApplicationController
   def index
         time = Time.new
         all_subscriptions = SubscribedTo.all
+    temp = SubscribedTo.all
         #temp =0
         all_subscriptions.each do |i|
           #time2 = i.end_date_time
