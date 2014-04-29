@@ -28,17 +28,8 @@ class Api::V1::SubscribeToController < ApplicationController
     end
     seconds = seconds*time_per_division
     end_date = time + seconds
-    #end_date = time + 10
-    #if time < end_date
-    #  test = "passed"
-    #else
-    #  test = "failed"
-    #end
-    #end_date = time +
-    #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
-    new_subscription = SubscribedTo.create!(:user_id => params[:user_id], :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
-    
-    
+    new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
+    #new_subscription = SubscribedTo.create!(:user_id => params[:user_id], :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
     
     render :status => 200,
            :json => { :success => true,
@@ -46,6 +37,20 @@ class Api::V1::SubscribeToController < ApplicationController
              :data => { "subscription" => new_subscription,
                :start_date => time}
                     }
+  end
+  
+  def destroy
+    
+    subscription = SubscribedTo.find(params[:id])
+    #providers_content = Provider.find_by_content_area_id(content.id)
+
+      subscription.destroy
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Subscription Deleted",
+             :data => { "subscription" => subscription}
+                    }
+
   end
   
 end

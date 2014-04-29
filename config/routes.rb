@@ -16,6 +16,7 @@ DeviseExample::Application.routes.draw do
       post 'create_providers' => 'create_providers#create'#create a provider
       
       post 'subscribe_to' => 'subscribe_to#create'#subscribe to a provider
+      delete 'subscribe_to' => 'subscribe_to#destroy'#delete subscription
       
       post 'content_area' => 'content_area#create'#create a content/knowledge area
       get 'content_area' => 'content_area#index'#return all content/knowledge areas

@@ -10,29 +10,19 @@ class Api::V1::UserProvidersController < ApplicationController
   def index
         time = Time.now.to_i
         time2 = 0
-    
-    
         all_subscriptions = SubscribedTo.all
-        #temp = SubscribedTo.all
-        temp2 =0
         all_subscriptions.each do |i|
           time2 = i.end_date
           if time2.nil?
-            #i.destroy
+            i.destroy
           elsif time2 < time
-            temp2 = temp2 +1
-            #temp =  i
-            #i.destroy
-          
-          end
-          if i.id == 11
             i.destroy
           end
           
         end
     
-        #subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
-        subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
+        subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
+        #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
         my_providers = Provider.where(:id => subscriptions) 
         #my_providers = Provider.all
 
@@ -40,11 +30,7 @@ class Api::V1::UserProvidersController < ApplicationController
         render :status => 200,
                  :json => { :success => true,
                             :info => "My Subscriptions",
-                            :data => {"providers" => my_providers,
-                              "subscriptions" => subscriptions,
-                              "time" => time,
-                              "temp2" => temp2,
-                              "all subscriptions" => all_subscriptions}
+                            :data => {"providers" => my_providers}
                           }
         end
   
@@ -52,7 +38,6 @@ class Api::V1::UserProvidersController < ApplicationController
     
     provider = Provider.find(params[:id])
     content_elements = ContentElement.find_by_provider_id(provider)
-    #delivery.destroy
     
     if content_elements.nil?
       provider.destroy
