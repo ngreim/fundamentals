@@ -56,14 +56,13 @@ class Api::V1::FormatController < ApplicationController
   def update
     format = Format.find(params[:id])
 
-    #if format.hidden == 0
-    #  format.update_column(:hidden, 1)
-    #elsif format.hidden == null
-    #  format.update_column(:hidden, 0)
-    #else
-    #  format.update_column(:hidden, 0)
-    #end
-   #format.update_column(:away_score, params[:game][:away_score])
+    if format.hidden == 0
+      format.update_column(:hidden, 1)
+    elsif format.hidden == null
+      format.update_column(:hidden, 0)
+    else
+      format.update_column(:hidden, 0)
+    end
 
    render :status => 200,
            :json => { :success => true,
