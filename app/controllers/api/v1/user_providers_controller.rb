@@ -12,13 +12,14 @@ class Api::V1::UserProvidersController < ApplicationController
         time2 = Time.new
         all_subscriptions = SubscribedTo.all
         temp = SubscribedTo.all
-        #temp =0
+        temp2 =0
         all_subscriptions.each do |i|
           time2 = i.end_date_time
-          #if time2 < time
-            #temp = temp +1
-          temp =  i
-          #end
+          if time2 < time
+            temp2 = temp2 +1
+            temp =  i
+          end
+          
         end
     
         #subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
@@ -32,7 +33,7 @@ class Api::V1::UserProvidersController < ApplicationController
                             :info => "My Subscriptions",
                             :data => {"providers" => my_providers,
                               "temp" => temp,
-                              "time2" => time2}
+                              "time" => time}
                           }
         end
   
