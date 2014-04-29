@@ -8,10 +8,20 @@ class Api::V1::UserProvidersController < ApplicationController
   respond_to :json
 
   def index
+        time = Time.new
+        all_subscriptions = SubscribedTo.all
+        temp =0
+        all_subscriptions.each do |i|
+          if all_subscriptions[i].end_date < time
+            temp = temp
+          end
+        end
+    
         subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
         #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
         my_providers = Provider.where(:id => subscriptions) 
         #my_providers = Provider.all
+
     
         render :status => 200,
                  :json => { :success => true,
