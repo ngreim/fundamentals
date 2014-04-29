@@ -8,13 +8,15 @@ class Api::V1::UserProvidersController < ApplicationController
   respond_to :json
 
   def index
-        time = Time.new
-        time2 = Time.new
+        time = Time.now.to_i
+        time2 = 0
+    
+    
         all_subscriptions = SubscribedTo.all
         temp = SubscribedTo.all
         temp2 =0
         all_subscriptions.each do |i|
-          time2 = i.end_date_time
+          time2 = i.end_date
           if time2.nil?
             #i.destroy
           elsif time2 < time
