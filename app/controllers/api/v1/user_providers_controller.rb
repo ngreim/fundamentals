@@ -13,7 +13,7 @@ class Api::V1::UserProvidersController < ApplicationController
     
     
         all_subscriptions = SubscribedTo.all
-        temp = SubscribedTo.all
+        #temp = SubscribedTo.all
         temp2 =0
         all_subscriptions.each do |i|
           time2 = i.end_date
@@ -23,6 +23,8 @@ class Api::V1::UserProvidersController < ApplicationController
             temp2 = temp2 +1
             temp =  i
             #i.destroy
+          else
+            temp = 1
           end
           
         end
