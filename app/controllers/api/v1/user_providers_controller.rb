@@ -15,7 +15,9 @@ class Api::V1::UserProvidersController < ApplicationController
         temp2 =0
         all_subscriptions.each do |i|
           time2 = i.end_date_time
-          if time2 < time
+          if time2.nil?
+            
+          elsif time2 < time
             temp2 = temp2 +1
             temp =  i
           end
