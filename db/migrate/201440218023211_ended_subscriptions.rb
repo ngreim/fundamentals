@@ -4,7 +4,6 @@ class EndedSubscriptions < ActiveRecord::Migration
       t.integer :user_id
       t.integer :provider_id
       t.integer :subscription_id
-      t.integer :id
       t.integer :end_date
       t.string :subscription_type
       t.time :end_date_time
