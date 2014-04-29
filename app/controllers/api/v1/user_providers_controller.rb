@@ -10,16 +10,17 @@ class Api::V1::UserProvidersController < ApplicationController
   def index
         time = Time.new
         all_subscriptions = SubscribedTo.all
-        temp =0
+        #temp =0
         all_subscriptions.each do |i|
-          time2 = i.end_date_time
-          if time2 < time
-            temp = temp +1
-          end
+          #time2 = i.end_date_time
+          #if time2 < time
+            #temp = temp +1
+          temp = i
+          #end
         end
     
-        subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
-        #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
+        #subscriptions = SubscribedTo.where(:user_id => current_user.id).pluck(:provider_id)
+        subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
         my_providers = Provider.where(:id => subscriptions) 
         #my_providers = Provider.all
 
