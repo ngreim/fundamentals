@@ -29,7 +29,7 @@ class Api::V1::UserProvidersController < ApplicationController
                  :json => { :success => true,
                             :info => "My Subscriptions",
                             :data => {"providers" => my_providers,
-                              :temp => temp}
+                              "temp" => temp}
                           }
         end
   
