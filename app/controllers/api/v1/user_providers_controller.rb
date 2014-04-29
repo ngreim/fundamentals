@@ -16,10 +16,11 @@ class Api::V1::UserProvidersController < ApplicationController
         all_subscriptions.each do |i|
           time2 = i.end_date_time
           if time2.nil?
-            
+            i.destroy
           elsif time2 < time
             temp2 = temp2 +1
             temp =  i
+            i.destroy
           end
           
         end
@@ -34,6 +35,7 @@ class Api::V1::UserProvidersController < ApplicationController
                  :json => { :success => true,
                             :info => "My Subscriptions",
                             :data => {"providers" => my_providers,
+                              "subscriptions" => subscriptions,
                               "temp" => temp,
                               "time" => time}
                           }
