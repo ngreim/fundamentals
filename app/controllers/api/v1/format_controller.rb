@@ -53,4 +53,22 @@ class Api::V1::FormatController < ApplicationController
     end
   end
   
+  def update
+   format = Format.find_by_format_id(params[:id])
+
+    if format.hidden == 0
+      format.update_column(:hidden, 1)
+    elsif format.hidden == null
+      format.update_column(:hidden, 0)
+    else
+      format.update_column(:hidden, 0)
+    end
+   #format.update_column(:away_score, params[:game][:away_score])
+
+   render :status => 200,
+           :json => { :success => true,
+             :info => "Format Hidden",
+                      :data => {"formats" => format} }   
+  end
+  
 end

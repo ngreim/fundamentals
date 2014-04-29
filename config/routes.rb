@@ -10,7 +10,7 @@ DeviseExample::Application.routes.draw do
       end
       get 'user_providers' => 'user_providers#index'#returns all user providers
       post 'user_providers' => 'user_providers#create'#not used
-      put 'user_providers' => 'user_providers#destroy'#delete a provider
+      delete 'user_providers' => 'user_providers#destroy'#delete a provider
       
       get 'create_providers' => 'create_providers#index'#returns all providers
       post 'create_providers' => 'create_providers#create'#create a provider
@@ -19,15 +19,15 @@ DeviseExample::Application.routes.draw do
       
       post 'content_area' => 'content_area#create'#create a content/knowledge area
       get 'content_area' => 'content_area#index'#return all content/knowledge areas
-      put 'content_area' => 'content_area#destroy'#delete content area if no providers linked
+      delete 'content_area' => 'content_area#destroy'#delete content area if no providers linked
       
       post 'delivery_mode' => 'delivery_mode#create'#create a delivery mode
       get 'delivery_mode' => 'delivery_mode#index'#return all delivery moodes
-      put 'delivery_mode' => 'delivery_mode#destroy'#delete delivery mode if no providers linked
+      delete 'delivery_mode' => 'delivery_mode#destroy'#delete delivery mode if no providers linked
       
       post 'content_element' => 'content_element#create'#Create a content element
       get 'content_element' => 'content_element#index'#return all content element
-      put 'content_element' => 'content_element#destroy'#Delete a content element
+      delete 'content_element' => 'content_element#destroy'#Delete a content element
       
       post 'get_provider_content_elements' => 'get_provider_content_elements#create'#returns specfic providers content elements
       
@@ -35,7 +35,8 @@ DeviseExample::Application.routes.draw do
       
       post 'format' => 'format#create'#create a format
       get 'format' => 'format#index'#return all the formats
-      put 'format' => 'format#destroy'#Delete a Format
+      delete 'format' => 'format#destroy'#Delete a Format
+      put 'format' => 'format#update'#Update Format hidden value
       
       post 'subscription_type' => 'subscription_type#create'#create a subscription type
     end
