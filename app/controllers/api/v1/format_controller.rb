@@ -58,16 +58,23 @@ class Api::V1::FormatController < ApplicationController
 
     if format.hidden == 0
       format.update_column(:hidden, 1)
-    elsif format.hidden.nil?
-      format.update_column(:hidden, 0)
-    else
-      format.update_column(:hidden, 0)
-    end
-
-   render :status => 200,
+      render :status => 200,
            :json => { :success => true,
              :info => "Format Hidden",
-                      :data => {"formats" => format} }   
+                      :data => {"formats" => format} } 
+    elsif format.hidden.nil?
+      format.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Format Hidden",
+                      :data => {"formats" => format} } 
+    else
+      format.update_column(:hidden, 0)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Format Unhidden",
+                      :data => {"formats" => format} } 
+    end 
   end
   
 end

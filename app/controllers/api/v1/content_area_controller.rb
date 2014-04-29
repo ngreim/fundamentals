@@ -52,4 +52,28 @@ class Api::V1::ContentAreaController < ApplicationController
     end
   end
   
+  def update
+    content = ContentArea.find(params[:id])
+
+    if content.hidden == 0
+      content.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Content Area Hidden",
+                      :data => {"content" => content} } 
+    elsif content.hidden.nil?
+      content.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Content Area Hidden",
+                      :data => {"content" => content} } 
+    else
+      content.update_column(:hidden, 0)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Content Area Unhidden",
+                      :data => {"content" => content} } 
+    end 
+  end
+  
 end

@@ -51,4 +51,28 @@ class Api::V1::DeliveryModeController < ApplicationController
     end
   end
   
+  def update
+    delivery = DeliveryMode.find(params[:id])
+
+    if delivery.hidden == 0
+      delivery.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Delivery Mode Hidden",
+                      :data => {"delivery" => delivery} } 
+    elsif delivery.hidden.nil?
+      delivery.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Delivery Mode Hidden",
+                      :data => {"delivery" => delivery} } 
+    else
+      delivery.update_column(:hidden, 0)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Delivery Mode Unhidden",
+                      :data => {"delivery" => delivery} } 
+    end 
+  end
+  
 end

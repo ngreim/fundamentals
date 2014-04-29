@@ -18,4 +18,28 @@ class Api::V1::SubscriptionTypeController < ApplicationController
                     }
   end
   
+  def update
+    subscription_type = SubscriptionType.find(params[:id])
+
+    if subscription_type.hidden == 0
+      subscription_type.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Subscription Type Hidden",
+                      :data => {"subscription_type" => subscription_type} } 
+    elsif subscription_type.hidden.nil?
+      subscription_type.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Subscription Type Hidden",
+                      :data => {"subscription_type" => subscription_type} } 
+    else
+      subscription_type.update_column(:hidden, 0)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Subscription Type Unhidden",
+                      :data => {"subscription_type" => subscription_type} } 
+    end 
+  end
+  
 end

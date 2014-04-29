@@ -20,14 +20,18 @@ DeviseExample::Application.routes.draw do
       post 'content_area' => 'content_area#create'#create a content/knowledge area
       get 'content_area' => 'content_area#index'#return all content/knowledge areas
       delete 'content_area' => 'content_area#destroy'#delete content area if no providers linked
+      put 'content_area' => 'content_area#update'#Update content area hidden value
       
       post 'delivery_mode' => 'delivery_mode#create'#create a delivery mode
       get 'delivery_mode' => 'delivery_mode#index'#return all delivery moodes
       delete 'delivery_mode' => 'delivery_mode#destroy'#delete delivery mode if no providers linked
+      put 'delivery_mode' => 'delivery_mode#update'#Update delivery mode hidden value
+
       
       post 'content_element' => 'content_element#create'#Create a content element
       get 'content_element' => 'content_element#index'#return all content element
       delete 'content_element' => 'content_element#destroy'#Delete a content element
+      put 'content_element' => 'content_element#update'#Update content element hidden value
       
       post 'get_provider_content_elements' => 'get_provider_content_elements#create'#returns specfic providers content elements
       
@@ -39,6 +43,7 @@ DeviseExample::Application.routes.draw do
       put 'format' => 'format#update'#Update Format hidden value
       
       post 'subscription_type' => 'subscription_type#create'#create a subscription type
+      put 'subscription_type' => 'subscription_type#update'#Update subscription type hidden value
     end
   end
 

@@ -42,4 +42,28 @@ class Api::V1::ContentElementController < ApplicationController
 
   end
   
+  def update
+    content = ContentElement.find(params[:id])
+
+    if content.hidden == 0
+      content.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Content Element Hidden",
+                      :data => {"content" => content} } 
+    elsif content.hidden.nil?
+      content.update_column(:hidden, 1)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Content Element Hidden",
+                      :data => {"content" => content} } 
+    else
+      content.update_column(:hidden, 0)
+      render :status => 200,
+           :json => { :success => true,
+             :info => "Content Element Unhidden",
+                      :data => {"content" => content} } 
+    end 
+  end
+  
 end
