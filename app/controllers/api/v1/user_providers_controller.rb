@@ -25,6 +25,9 @@ class Api::V1::UserProvidersController < ApplicationController
             #i.destroy
           
           end
+          if i.id == 11
+            i.destroy
+          end
           
         end
     
