@@ -43,6 +43,7 @@ DeviseExample::Application.routes.draw do
       put 'format' => 'format#update'#Update Format hidden value
       
       post 'subscription_type' => 'subscription_type#create'#create a subscription type
+      delete 'subscription_type' => 'subscription_type#destroy'#Delete a subscription type
       put 'subscription_type' => 'subscription_type#update'#Update subscription type hidden value
     end
   end
