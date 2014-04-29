@@ -4,4 +4,5 @@ class Provider < ActiveRecord::Base
   belongs_to :content_area
   has_many :subsrciption_types
   has_many :content_elements
+  has_many :ended_subscriptions 
 end
