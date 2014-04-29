@@ -1,4 +1,4 @@
-class EndedSubscriptions < ActiveRecord::Migration
+class CreateEndedSubscription < ActiveRecord::Migration
   def change
     create_table :ended_subscriptions do |t|
       t.integer :user_id
