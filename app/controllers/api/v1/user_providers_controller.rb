@@ -13,7 +13,7 @@ class Api::V1::UserProvidersController < ApplicationController
         temp =0
         all_subscriptions.each do |i|
           if all_subscriptions[i].end_date < time
-            temp = temp
+            temp = temp +1
           end
         end
     
@@ -26,7 +26,8 @@ class Api::V1::UserProvidersController < ApplicationController
         render :status => 200,
                  :json => { :success => true,
                             :info => "My Subscriptions",
-                            :data => {"providers" => my_providers}
+                            :data => {"providers" => my_providers,
+                              :temp => temp}
                           }
         end
   

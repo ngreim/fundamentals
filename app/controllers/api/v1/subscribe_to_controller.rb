@@ -44,7 +44,7 @@ class Api::V1::SubscribeToController < ApplicationController
            :json => { :success => true,
                       :info => "Subscription Created",
              :data => { "subscription" => new_subscription,
-               :start_date = time}
+               :start_date => time}
                     }
   end
   
