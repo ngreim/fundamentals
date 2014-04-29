@@ -9,14 +9,15 @@ class Api::V1::UserProvidersController < ApplicationController
 
   def index
         time = Time.new
+        time2 = Time.new
         all_subscriptions = SubscribedTo.all
-    temp = SubscribedTo.all
+        temp = SubscribedTo.all
         #temp =0
         all_subscriptions.each do |i|
-          #time2 = i.end_date_time
+          time2 = i.end_date_time
           #if time2 < time
             #temp = temp +1
-          temp = i
+          temp =  i
           #end
         end
     
@@ -30,7 +31,8 @@ class Api::V1::UserProvidersController < ApplicationController
                  :json => { :success => true,
                             :info => "My Subscriptions",
                             :data => {"providers" => my_providers,
-                              "temp" => temp}
+                              "temp" => temp
+                              "time2" => time2}
                           }
         end
   
