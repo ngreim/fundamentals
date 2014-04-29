@@ -37,7 +37,8 @@ class Api::V1::UserProvidersController < ApplicationController
                             :data => {"providers" => my_providers,
                               "subscriptions" => subscriptions,
                               "temp" => temp,
-                              "time" => time}
+                              "time" => time,
+                              "all subscriptions" => all_subscriptions}
                           }
         end
   
