@@ -16,11 +16,11 @@ class Api::V1::UserProvidersController < ApplicationController
         all_subscriptions.each do |i|
           time2 = i.end_date_time
           if time2.nil?
-            i.destroy
+            #i.destroy
           elsif time2 < time
             temp2 = temp2 +1
             temp =  i
-            i.destroy
+            #i.destroy
           end
           
         end
