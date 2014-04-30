@@ -16,7 +16,7 @@ class Api::V1::GetProviderSubscriptionTypesController < ApplicationController
         render :status => 200,
                  :json => { :success => true,
                    :info => "Subscription Types",
-                   :data => {"content_elements" => provider_subscription_types}
+                   :data => {"subscription_types" => provider_subscription_types}
                           }
     end
 end
