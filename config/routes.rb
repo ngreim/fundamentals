@@ -48,6 +48,8 @@ DeviseExample::Application.routes.draw do
       put 'subscription_type' => 'subscription_type#update'#Update subscription type hidden value
       
       post 'search_providers' => 'search_providers#create'#search providers
+      
+      get 'renew_subscription' => 'renew_subscription#index'#returns all user providers
     end
   end
 
