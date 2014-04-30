@@ -16,3 +16,4 @@ class Api::V1::SendSubscriptionTypesController < ApplicationController
                             :data => {"subscription_types" => subscription_types}
                           } 
   end
+end
