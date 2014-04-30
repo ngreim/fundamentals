@@ -12,7 +12,7 @@ class Api::V1::SendSubscriptionTypesController < ApplicationController
     
         render :status => 200,
                  :json => { :success => true,
-                            :info => "My Formats",
+                   :info => "Subscription Types",
                             :data => {"subscription_types" => subscription_types}
                           } 
   end
