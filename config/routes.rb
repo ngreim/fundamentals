@@ -51,7 +51,7 @@ DeviseExample::Application.routes.draw do
       
       get 'renew_subscription' => 'renew_subscription#index'#returns all user providers
       
-      post 'send_subscription_types' => 'send_subscription_types#update'#return subscription types based on provider
+      post 'send_subscription_types' => 'send_subscription_types#create'#return subscription types based on provider
     end
   end
 
