@@ -6,9 +6,8 @@ class Api::V1::SubscriptionTypeController < ApplicationController
    #before_filter :authenticate_user!
 
   respond_to :json
-
-
-  def create
+  
+   def create
 
     new_subscription_type = SubscriptionType.create!(:provider_id => params[:provider_id], :name => params[:name], :subscription_length => params[:subscription_length], :hidden => 0)
     render :status => 200,
