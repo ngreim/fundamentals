@@ -52,6 +52,21 @@ DeviseExample::Application.routes.draw do
       get 'renew_subscription' => 'renew_subscription#index'#returns all user providers
       
       post 'send_subscription_types' => 'send_subscription_types#create'#return subscription types based on provider
+      
+      post 'delete_provider' => 'delete_provider#create'#delete a provider
+      
+      post 'delete_content_area' => 'delete_content_area#create'#delete a content area
+      
+      post 'delete_content_element' => 'delete_content_element#create'#delete a content element
+      
+      post 'delete_format' => 'delete_format#create'#delete a format
+      
+      post 'delete_subscription_type' => 'delete_subscription_type#create'#delete a subscription type
+      
+      post 'delete_subscription' => 'delete_subscription#create'#delete a subscription
+      
+      post 'delete_delivery_mode' => 'delete_delivery_mode#create'#delete a delivery mode
+      
     end
   end
 
