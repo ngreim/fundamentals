@@ -9,7 +9,7 @@ class Api::V1::DeleteContentElementController < ApplicationController
 
   def delete
     
-    ContentElement.find(params[:id]).delete
+    ContentElement.find_by_id(params[:id]).delete
    
       #content.destroy
       render :status => 200,
