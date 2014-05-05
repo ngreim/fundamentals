@@ -40,7 +40,7 @@ class Api::V1::ContentElementController < ApplicationController
        #    :json => { :success => true,
         #     :info => "Content Element Deleted",
          #    :data => { "names" => content}
-                    }
+                    #}
     #else
       #render :status => 403,
        #      :json => { :success => false,
