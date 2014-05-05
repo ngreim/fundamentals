@@ -9,7 +9,7 @@ class Api::V1::UserInfoController < ApplicationController
 
   def index
         
-    user = User.find_by_user_id(:user_id => current_user.id)
+    user = User.find_by_id(:id => current_user.id)
         #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
         #my_providers = Provider.where(:id => subscriptions) 
         #my_providers = Provider.all
