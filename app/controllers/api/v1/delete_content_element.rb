@@ -15,7 +15,7 @@ class Api::V1::DeleteContentElementController < ApplicationController
       render :status => 200,
            :json => { :success => true,
              :info => "Content Element Deleted",
-             :data => { "names" => content}
+             :data => { }
                     }
   end
 end
