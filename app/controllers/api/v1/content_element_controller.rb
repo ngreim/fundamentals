@@ -28,18 +28,18 @@ class Api::V1::ContentElementController < ApplicationController
                     }
   end
   
-  def destroy
+  #def destroy
     
-    content = ContentElement.find(params[:id])
+    #content = ContentElement.find(params[:id])
     #provider = content.provider_id
     #users = SubscribedTo.where(:provider_id => provider)
 
     #if users.nil?
-      content.destroy
-      render :status => 200,
-           :json => { :success => true,
-             :info => "Content Element Deleted",
-             :data => { "names" => content}
+     # content.destroy
+      #render :status => 200,
+       #    :json => { :success => true,
+        #     :info => "Content Element Deleted",
+         #    :data => { "names" => content}
                     }
     #else
       #render :status => 403,
@@ -49,7 +49,7 @@ class Api::V1::ContentElementController < ApplicationController
           #                "users" => users} }
     #end
 
-  end
+  #end
   
   def update
     content = ContentElement.find(params[:id])
