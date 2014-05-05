@@ -21,3 +21,4 @@ class Api::V1::UserInfoController < ApplicationController
                             :data => {"user" => user}
                           }
         end
+end
