@@ -31,7 +31,7 @@ DeviseExample::Application.routes.draw do
       
       post 'content_element' => 'content_element#create'#Create a content element
       get 'content_element' => 'content_element#index'#return all content element
-      delete 'content_element' => 'content_element#destroy'#Delete a content element
+      #delete 'content_element' => 'content_element#destroy'#Delete a content element
       put 'content_element' => 'content_element#update'#Update content element hidden value
       
       post 'get_provider_content_elements' => 'get_provider_content_elements#create'#returns specfic providers content elements
