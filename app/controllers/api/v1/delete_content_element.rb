@@ -7,7 +7,7 @@ class Api::V1::DeleteContentElementController < ApplicationController
 
   respond_to :json
 
-  def delete
+  def destroy
     
    content = ContentElement.find(params[:id])
    
