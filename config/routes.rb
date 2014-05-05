@@ -67,6 +67,8 @@ DeviseExample::Application.routes.draw do
       
       post 'delete_delivery_mode' => 'delete_delivery_mode#create'#delete a delivery mode
       
+      get 'user_info' => 'user_info#index'#return current users info
+      
     end
   end
 
