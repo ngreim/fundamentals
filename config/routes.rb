@@ -57,7 +57,7 @@ DeviseExample::Application.routes.draw do
       
       post 'delete_content_area' => 'delete_content_area#create'#delete a content area
       
-      post 'delete_content_element' => 'delete_content_element#destroy'#delete a content element
+      post 'delete_content_element' => 'delete_content_element#delete'#delete a content element
       
       post 'delete_format' => 'delete_format#create'#delete a format
       

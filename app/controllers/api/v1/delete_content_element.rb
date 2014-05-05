@@ -7,11 +7,11 @@ class Api::V1::DeleteContentElementController < ApplicationController
 
   respond_to :json
 
-  def destroy
+  def delete
     
-   content = ContentElement.find(params[:id])
+    ContentElement.find(params[:id]).delete
    
-      content.destroy
+      #content.destroy
       render :status => 200,
            :json => { :success => true,
              :info => "Content Element Deleted",
