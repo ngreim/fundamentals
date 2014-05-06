@@ -69,6 +69,8 @@ DeviseExample::Application.routes.draw do
       
       post 'user_info' => 'user_info#create'#return current users info
       
+      post 'reset_password' => 'reset_password#create'#send email to reset password
+      
     end
   end
 
