@@ -9,7 +9,7 @@ class Api::V1::UpdateUserTypeController < ApplicationController
 
   def create
         
-    user = User.where(:id => current_user.id)
+    user = User.where(:id => 15)
     
     if user.user_type.nil?
       format.update_column(:user_type, 0)
