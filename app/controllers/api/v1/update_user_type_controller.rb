@@ -12,7 +12,7 @@ class Api::V1::UpdateUserTypeController < ApplicationController
     user = User.where(:id => 15)
     
     if user.user_type.nil?
-      format.update_column(:user_type, 0)
+      user.update_column(:user_type, 0)
       render :status => 200,
                  :json => { :success => true,
                             :info => "My Subscriptions",
