@@ -7,10 +7,10 @@ class Api::V1::UserInfoController < ApplicationController
 
   respond_to :json
 
-  def index
+  def create
         
     #user = User.where(:user_id => current_user.id)
-    user = Provider.where(:id => 7)
+    user = Provider.where(:id => params[:provider_id])
         #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
         #my_providers = Provider.where(:id => subscriptions) 
         #my_providers = Provider.all
