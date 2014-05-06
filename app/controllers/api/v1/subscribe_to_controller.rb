@@ -47,7 +47,9 @@ class Api::V1::SubscribeToController < ApplicationController
   
   def destroy
     
-    subscription = SubscribedTo.find(params[:id])
+    #subscription = SubscribedTo.find(params[:id])
+    subscriptions = SubscribedTo.where(:user_id => current_user.id)
+    subscription = subscriptions.find_by_provider_id(params[:provider_id])
     #providers_content = Provider.find_by_content_area_id(content.id)
 
       subscription.destroy
