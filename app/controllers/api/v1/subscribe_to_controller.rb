@@ -45,7 +45,7 @@ class Api::V1::SubscribeToController < ApplicationController
                     }
   end
   
-  def destroy
+  def update
     
     #subscription = SubscribedTo.find(params[:id])
     subscriptions = SubscribedTo.where(:user_id => current_user.id)
