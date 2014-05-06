@@ -9,9 +9,9 @@ class Api::V1::UpdateUserTypeController < ApplicationController
 
   def create
         
-    user = User.where(:id => 15)
+    user = User.find_by_id(:id => 15)
     
-    if user.user_type.nil?
+    #if user.user_type.nil?
       user.update_column(:user_type, 0)
       render :status => 200,
                  :json => { :success => true,
