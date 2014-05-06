@@ -18,6 +18,6 @@ class Api::V1::UpdateUserTypeController < ApplicationController
                             :info => "My Subscriptions",
                             :data => {"user" => user}
                           }
-    end
+    #end
   end
 end
