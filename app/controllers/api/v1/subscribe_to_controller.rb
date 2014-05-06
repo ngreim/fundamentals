@@ -32,8 +32,8 @@ class Api::V1::SubscribeToController < ApplicationController
     #providers = SubscribedTo.where(:user_id => params[:user_id]).pluck(:provider_id)
     #if providers
     
-    #new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
-    new_subscription = SubscribedTo.create!(:user_id => params[:user_id], :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
+    new_subscription = SubscribedTo.create!(:user_id => current_user.id, :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
+    #new_subscription = SubscribedTo.create!(:user_id => params[:user_id], :provider_id => params[:provider_id], :subscription_id => params[:subscription_id], :subscription_type => params[:subscription_type], :end_date_time => end_date, :end_date => end_date)
     
     
     
