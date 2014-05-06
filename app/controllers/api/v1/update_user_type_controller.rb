@@ -1,4 +1,4 @@
-class Api::V1::UserInfoController < ApplicationController
+class Api::V1::UpdateUserTypeController < ApplicationController
   skip_before_filter :verify_authenticity_token,
                      :if => Proc.new { |c| c.request.format == 'application/json' }
 
@@ -10,16 +10,14 @@ class Api::V1::UserInfoController < ApplicationController
   def create
         
     user = User.where(:id => current_user.id)
-    #user = Provider.where(:id => params[:provider_id])
-        #subscriptions = SubscribedTo.where(:user_id => 1).pluck(:provider_id)
-        #my_providers = Provider.where(:id => subscriptions) 
-        #my_providers = Provider.all
-
     
-        render :status => 200,
+    if user.user_type.nil?
+      format.update_column(:user_type, 0)
+      render :status => 200,
                  :json => { :success => true,
                             :info => "My Subscriptions",
                             :data => {"user" => user}
                           }
-        end
+    end
+  end
 end
